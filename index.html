@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Anantapur Drought Research Visualisation</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>body{font-family:Arial,sans-serif;max-width:1000px;margin:30px auto;padding:0 16px} canvas{margin:25px 0}</style>
+</head><body>
+<h1>Anantapur Drought & Water-Security Research</h1>
+<p>Exploratory visualisation accompanying the manuscript. The multimodal surface-stress series is explicitly exploratory.</p>
+<canvas id="stress"></canvas>
+<canvas id="groundwater"></canvas>
+<script>
+const years=[1990, 2000, 2010, 2020];
+const fusion=[0.4, 0.4357, 0.6658, 0.4047];
+new Chart(document.getElementById('stress'),{type:'line',data:{labels:years,datasets:[{label:'Exploratory surface-stress index',data:fusion,borderWidth:2}]}});
+const periods=['May 2022', 'Jan 2023'];
+const minD=[1.05, 0.2];
+const maxD=[19.82, 13.33];
+new Chart(document.getElementById('groundwater'),{type:'bar',data:{labels:periods,datasets:[{label:'Minimum depth (m bgl)',data:minD},{label:'Maximum depth (m bgl)',data:maxD}]}});
+</script></body></html>
